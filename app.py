@@ -11,7 +11,7 @@ application.config["SQLALCHEMY_ECHO"] = False
 application.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 # db variable initialization
-# db = SQLAlchemy(application)
+db = SQLAlchemy(application)
 
 class Person(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -22,7 +22,7 @@ class Person(db.Model):
         return '<Person: {}>'.format(self.name)
 
 db.init_app(application)
-db.create_all()  # Create sql tables for our data models
+# db.create_all()  # Create sql tables for our data models
 
 class PersonEncoder(JSONEncoder):
     def default(self, o):
