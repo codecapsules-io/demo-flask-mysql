@@ -11,7 +11,7 @@ application.config["SQLALCHEMY_ECHO"] = False
 application.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 # db variable initialization
-db = SQLAlchemy(application)
+# db = SQLAlchemy(application)
 
 class Person(db.Model):
     id = db.Column(db.Integer, primary_key=True)
